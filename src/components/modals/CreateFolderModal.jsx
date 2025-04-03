@@ -15,8 +15,6 @@ export default function CreateFolderModal({
             onSubmit={(e) => {
               e.preventDefault();
               if (createFolderModal?.type === "other") {
-                console.log("other");
-
                 handelCreateFolder({
                   id: uuid(),
                   foldername: e.target.foldername.value,

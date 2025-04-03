@@ -15,7 +15,6 @@ export default function TeachersMaterials() {
   const [showFolderFile, setShowFolderFile] = useState(allMaterials[0]); // object
 
   const handelFolderClick = (data) => {
-    console.log(data);
     setShowFolderFile(data);
     setFolderPath((pre) => [...pre, data]);
   };
@@ -42,9 +41,6 @@ export default function TeachersMaterials() {
   };
 
   const handelCreateFolder = (data) => {
-    console.log(data);
-    console.log(showFolderFile);
-
     setShowFolderFile((pre) => ({
       ...pre,
       children: [...pre?.children, data],
@@ -52,22 +48,17 @@ export default function TeachersMaterials() {
   };
 
   const handelFileUpload = (data) => {
-    console.log(data);
-    console.log(showFolderFile);
-
     setShowFolderFile((pre) => ({
       ...pre,
       data: [...pre?.data, data],
     }));
   };
   const handelFolderUpload = (files) => {
-    console.log(files);
     const newData = processFolderUpload(files);
     setShowFolderFile((pre) => ({
       ...pre,
       children: [...pre?.children, newData[0]],
     }));
-    console.log(newData);
   };
 
   // Convert bytes to readable size
