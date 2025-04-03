@@ -10,7 +10,7 @@ export default function UploadSingleFile({
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            console.log(e.target.filename.files);
+
             const file = e.target.filename.files[0];
 
             if (file && file.type !== "") {
